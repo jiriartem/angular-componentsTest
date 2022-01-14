@@ -1,0 +1,26 @@
+<div [formGroup]="form">
+  <p>*TEST* dynamic form question component</p>
+	<label *ngIf="question.controlType!='checkbox'" [attr.for]="index?question.key+index:question.key">{{question.label}}</label>
+  
+  <div [ngSwitch]="question.controlType">
+
+    <input *ngSwitchCase="'textbox'" [formControlName]="question.key"
+            [id]="index?question.key+index:question.key" [type]="question.type">
+
+
+    <select [id]="index?question.key+index:question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
+      <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+    </select>
+
+  </div> 
+
+  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+</div>
+
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

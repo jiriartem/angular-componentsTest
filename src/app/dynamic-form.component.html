@@ -1,0 +1,28 @@
+<div>
+	<form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <p>*TEST* dynamic form component</p>
+   <h4> <b> Person Name: </b> </h4>
+   <p> Like the above i need to have title for each part like Personal details and Family details. </p>
+
+		<app-dynamic-group [questions]="questions" 
+                      [form]="form.controls['main']" 
+                      [formControlName]="'main'" 
+                      [key]="'main'">
+    </app-dynamic-group>
+
+		<div class="form-row">
+			<button type="submit" [disabled]="!form.valid">Save</button>
+    </div>
+  </form> <br>
+
+  <pre>
+{{form?.value|json}}
+</pre>
+</div>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

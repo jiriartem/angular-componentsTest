@@ -1,0 +1,14 @@
+<div *ngIf="form">
+  <div *ngFor="let question of questions" class="form-row" [formGroup]="form">
+    <p>*TEST* dynamic group component</p>
+      <ng-container *ngIf="!question.children">
+        <app-question [question]="question" [form]="form"></app-question>
+      </ng-container>
+      {{question.controlType}}
+      {{question.children | json}}
+      {{question.key}}
+      <ng-container *ngIf="question.controlType === 'group' && question.children && question.children.length > 0">
+        <app-dynamic-group [questions]="question.children" [form]="form.controls[question.key]" [key]="question.key" [formControlName]="question.key"></app-dynamic-group>
+      </ng-container>
+  </div>
+</div>

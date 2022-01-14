@@ -1,0 +1,52 @@
+{
+          "dynamicJSON": [
+            {
+                "elementType": "textbox",
+                "class": "col-12 col-md-4 col-sm-12",
+                "key": "template_name",
+                "label": "Template Name",
+                "type": "text",
+                "value": "",
+                "required": true,
+                "order": 1
+            },
+            {
+                "elementType": "textbox",
+                "class": "col-12 col-md-4 col-sm-12",
+                "key": "temp_desc",
+                "label": "Template Description",
+                "type": "text",
+                "value": "",
+                "required": true,
+                "order": 2
+            },
+            {
+                "elementType": "array",
+                "key": "myArray",
+                "value": "",
+                "order": "3",
+                "children": [
+                    {
+                        "elementType": "textbox",
+                        "class": "col-12 col-md-4 col-sm-12",
+                        "key": "property_one",
+                        "label": "Property One",
+                        "type": "text",
+                        "value": "",
+                        "required": true,
+                        "order": 3
+                    },
+                    {
+                        "elementType": "textbox",
+                        "class": "col-12 col-md-4 col-sm-12",
+                        "key": "property_two",
+                        "label": "Property Two",
+                        "type": "text",
+                        "value": "",
+                        "required": true,
+                        "order": 4
+                    }
+                ]
+            }
+        ]
+}
